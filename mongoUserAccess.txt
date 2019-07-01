@@ -1,0 +1,5 @@
+user: dannyrs
+pass: 8hQ8UyNSol0OmYwg
+
+Mongo Connect root
+mongodb+srv://dannyrs:8hQ8UyNSol0OmYwg@cluster0-doka9.mongodb.net/cafe
