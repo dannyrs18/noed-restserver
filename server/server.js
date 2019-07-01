@@ -13,7 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use(require('./routes/usuario'));
+// Enlistamos en un archivo aparte las rutas para las peticiones
+app.use(require('./routes/index'));
 
 // mongoose.connect(process.env.DB_CONNECT,{
 mongoose.connect(process.env.MONGO_URI_CONNECT,{
@@ -21,7 +22,7 @@ mongoose.connect(process.env.MONGO_URI_CONNECT,{
     useNewUrlParser: true
 }, (err, resp) => {
     if (err) throw err;
-    console.log('Database connect', process.env.DB_CONNECT);
+    console.log('Database connect', process.env.MONGO_URI_CONNECT);
     
 });
 
