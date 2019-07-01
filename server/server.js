@@ -15,7 +15,8 @@ app.use(bodyParser.json())
 
 app.use(require('./routes/usuario'));
 
-mongoose.connect(process.env.DB_CONNECT,{
+// mongoose.connect(process.env.DB_CONNECT,{
+mongoose.connect(process.env.MONGO_URI_CONNECT,{
     useCreateIndex: true,
     useNewUrlParser: true
 }, (err, resp) => {
