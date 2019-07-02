@@ -54,6 +54,9 @@ async function verify(token) {
         idToken: token,
         audience: process.env.GOOGLE_ID,  // Specify the CLIENT_ID of the app that accesses the backend
     });
+
+    console.log(ticket);
+    
     const payload = ticket.getPayload();
     
     return {
@@ -66,13 +69,16 @@ async function verify(token) {
 
 app.post('/google', async (req, res) => {
     let token = req.body.idtoken;
-    let googleCredentials = await verify(token)
-        .catch(err => {
-            return res.status(403).json({
-                ok: false,
-                err
-            })
-        });
+    console.log(token);
+    let googleCredentials;
+    try {
+        googleCredentials = await verify(token)
+    } catch(err) {
+        return res.json({
+            ok: false,
+            err
+        })
+    }
 
     Usuario.findOne({email: googleCredentials.email}, (err, usuarioDB) => {
         if (err) {
