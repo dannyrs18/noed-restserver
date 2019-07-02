@@ -42,3 +42,11 @@ process.env.SEED = process.env.SEED || 'SED_DEV'; // Firma del token
  * heroku config:get nombre // Obtener valor de variable 
  * heroku config:unset nombre // Remover variable de entorno
  */
+
+/**
+ * =================================
+ * Google Client Id
+ * =================================
+ */
+
+ process.env.GOOGLE_ID = process.env.GOOGLE_ID || '273882050262-trb151u2g16acko4lnh13gnlrg5hpsab.apps.googleusercontent.com'

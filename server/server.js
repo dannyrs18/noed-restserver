@@ -2,6 +2,8 @@ require('./config/config');
 
 const express = require('express')
 const mongoose = require('mongoose');
+// Resuelve rutas, paquete propio de node
+const path = require('path');
 
 const app = express()
 
@@ -15,6 +17,9 @@ app.use(bodyParser.json())
 
 // Enlistamos en un archivo aparte las rutas para las peticiones
 app.use(require('./routes/index'));
+
+// Habilitar las paginas de carpeta public
+app.use( express.static( path.resolve( __dirname, '../public') ));
 
 // mongoose.connect(process.env.DB_CONNECT,{
 mongoose.connect(process.env.MONGO_URI_CONNECT,{
