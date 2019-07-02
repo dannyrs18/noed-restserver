@@ -67,10 +67,12 @@ async function verify(token) {
 app.post('/google', async (req, res) => {
     let token = req.body.idtoken;
     let googleCredentials = await verify(token)
-        .catch(err => res.status(403).json({
-            ok: false,
-            err
-        }));
+        .catch(err => {
+            return res.status(403).json({
+                ok: false,
+                err
+            })
+        });
 
     Usuario.findOne({email: googleCredentials.email}, (err, usuarioDB) => {
         if (err) {
