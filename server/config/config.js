@@ -32,7 +32,7 @@ process.env.MONGO_URI_CONNECT = process.env.MONGO_URI_CONNECT || 'mongodb://loca
  * =================================
  */
 
-process.env.EXPIRED_TOKEN = 60 * 60 * 24 * 30 // 60 seg * 60 min * 24 hor * 30 dias
+process.env.EXPIRED_TOKEN = '48h' // 60 seg * 60 min * 24 hor * 30 dias
 process.env.SEED = process.env.SEED || 'SED_DEV'; // Firma del token
 
 /**

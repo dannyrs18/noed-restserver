@@ -54,7 +54,7 @@ app.post('/usuario', [verifyToken, verifyAdmin], (req, res) => {
 
         res.json({
             ok: true,
-            usuarioDB
+            usuario: usuarioDB
         })
     })
 });

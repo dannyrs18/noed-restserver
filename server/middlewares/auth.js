@@ -18,6 +18,8 @@ let verifyToken = (req, res, next) => {
                 err: 'Token invalid'
             });
         }
+        // console.log(decoded); // payload
+        
         req.usuario = decoded.usuario;
         next()
     }) 
