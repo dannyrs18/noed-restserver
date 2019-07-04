@@ -11,7 +11,7 @@ var productoSchema = new Schema({
         type: Number, 
         required: [true, 'El precio únitario es necesario'] 
     },
-    descripcion: { 
+    descripcion: {
         type: String, 
         required: false 
     },
@@ -20,13 +20,17 @@ var productoSchema = new Schema({
         required: true, 
         default: true 
     },
+    img: {
+        type: String,
+        required: false
+    },
     categoria: { 
-        type: Schema.Types.ObjectId, 
-        ref: 'Categoria', 
+        type: Schema.Types.ObjectId,
+        ref: 'Categoria',
         required: true 
     },
-    usuario: { 
-        type: Schema.Types.ObjectId, 
+    usuario: {
+        type: Schema.Types.ObjectId,
         ref: 'Usuario' 
     }
 });
